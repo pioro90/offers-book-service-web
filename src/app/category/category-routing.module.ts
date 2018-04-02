@@ -11,10 +11,16 @@ const routes: Routes = [
     children: [{
       path: '',
       component: CategoryListComponent,
-      children: [{
-        path: ':id',
-        component: CategoryDetailsComponent
-      }]
+      children: [
+        {
+          path: ':id',
+          component: CategoryDetailsComponent
+        },
+        {
+          path: '',
+          redirectTo: '1'
+        }
+      ]
     }]
   }
 ];
