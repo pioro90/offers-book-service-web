@@ -11,11 +11,17 @@ export class CategoryService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getSubCategories(parentId?: string): Observable<Category[]> {
-    return of([{
-      id: '1234',
-      name: 'Cars'
-    }]);
+  getCategories(parentId?: string): Observable<Category[]> {
+    const categories = [];
+
+    for (let i = 0; i < 3; i++) {
+      categories.push({
+        id: `id-${i}`,
+        name: `Category - ${i}`
+      });
+    }
+
+    return of(categories);
   }
 
   getCategoryAttributes(id: string): Observable<CategoryAttribute[]> {

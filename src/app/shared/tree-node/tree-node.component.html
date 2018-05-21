@@ -1,0 +1,9 @@
+<div>
+  <span (click)="onToggleExpand()"
+        *ngIf="!isLeaf()">+</span>
+  <span (click)="onSelect()">{{node.name}}</span>
+</div>
+<div style="margin-left: 32px" *ngIf="isExpanded()">
+  <app-tree-node *ngFor="let n of node.children"
+                 [node]="n"></app-tree-node>
+</div>
